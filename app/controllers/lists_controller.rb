@@ -5,6 +5,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @bookmarks = Bookmark.all
   end
 
   def new
@@ -19,5 +20,10 @@ class ListsController < ApplicationController
 
   def list_params
     params.require(:list).permit(:name)
+  end
+
+  def destroy
+    List.find(params[:id]).destroy
+    redirect_to lists_path, status: :see_other
   end
 end

@@ -1,3 +1,7 @@
 <h1>show list</h1>
 <h2><%= @list.name%>
 <%= link_to "back to lists page", lists_path %>
+<%= link_to "Delete #{@list.name}", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are your sure?" } %>
+<% @bookmarks.each do |item| %>
+<li><%= item.comment %></li>
+<%end%>

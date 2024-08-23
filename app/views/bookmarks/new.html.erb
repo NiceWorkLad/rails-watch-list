@@ -1,5 +1,6 @@
-<h1>Edit Bookmarks</h1>
+<h1>New Bookmarks</h1>
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :comment %>
+  <%= f.association :movie, prompt: "Select a movie", input_html: {data: {controller: "tom-select"}} %>
   <%= f.button :submit %>
 <% end %>
