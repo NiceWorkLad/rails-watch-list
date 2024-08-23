@@ -4,4 +4,5 @@
 <%= link_to "Delete #{@list.name}", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are your sure?" } %>
 <% @bookmarks.each do |item| %>
 <li><%= item.comment %></li>
+<%= link_to "add another bookmark", new_list_bookmark_path(@list) %>
 <%end%>
